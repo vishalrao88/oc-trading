@@ -137,3 +137,13 @@ TICKER_ALIASES: dict[str, str] = {
     "BFB": "BF.B",
     # Add more as needed; keep both sides uppercase.
 }
+
+# Map canonical (Finnhub-style) symbols to the form yfinance/Yahoo uses.
+# Finnhub uses dots (BRK.B); yfinance uses hyphens (BRK-B). Same underlying
+# stock, different punctuation conventions.
+YFINANCE_SYMBOL_OVERRIDES: dict[str, str] = {
+    "BRK.B": "BRK-B",
+    "BRK.A": "BRK-A",
+    "BF.B": "BF-B",
+    "BF.A": "BF-A",
+}
